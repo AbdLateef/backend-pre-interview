@@ -54,7 +54,7 @@ node index.js
 ```
 ## Authors
 
-* **Lathif Jumatiawan** - *Initial work* - [abdlateef](https://github.com/AbdLateef)
+* **Lathif Jumatiawan** - [abdlateef](https://github.com/AbdLateef)
 
 [forkFromGithub]:https://github.com/en-trak/backend-pre-interview/fork
 [createAccount]:https://github.com/join
