@@ -48,10 +48,20 @@ Step 3 - Find this sum for each of the 50 puzzles
 Open terminal
 
 ### Step 2
+Write commands below in your terminal
+
 ```txt
-cd root_directory
-node index.js
+1. cd root_directory # to go to project directory
+2. yarn install # install dependencies
+3. node index.js # run node server
+
 ```
+After the terminal output this
+```txt
+    Server started on localhost:3000
+```
+then you can open browser and go to [http://localhost:3000] to see the output as html page
+
 ## Authors
 
 * **Lathif Jumatiawan** - [abdlateef](https://github.com/AbdLateef)
@@ -66,3 +76,4 @@ node index.js
 [tsSite]:https://typescriptlang.org
 [coffeeSite]:https://coffeescript.org
 [sudokuFile]:sudoku.txt
+[http://localhost:3000]:http://localhost:3000

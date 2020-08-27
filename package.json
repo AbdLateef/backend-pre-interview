@@ -28,5 +28,9 @@
             "es6": true,
             "es2020": true
         }
+    },
+    "dependencies": {
+        "ejs": "^3.1.5",
+        "express": "^4.17.1"
     }
 }

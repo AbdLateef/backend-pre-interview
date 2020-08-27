@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Sudoku Solver</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+        <!-- <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script> -->
+        <script src="https://unpkg.com/vue"></script> 
+        <script src="https://unpkg.com/http-vue-loader"></script>
+        <style>
+            .title-wrapper {
+                padding: 2rem 1rem;
+                margin-bottom: 2rem;
+                background-color: #e9ecef;
+                border-radius: .3rem;
+                width: 100%;
+            }
+            .title {
+                font-size: 4.5rem;
+                font-weight: 300;
+                line-height: 1.2;
+            }
+            .sudoku-heading {
+                text-align: center;
+            }
+            .raw-puzzles {
+                background-color: #f8f8f8;
+                box-shadow: 4px 4px 5px 0px #a2a2a2;
+                font-size: larger;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="app" class="container-fluid">
+            <div class="row">
+                <div class="title-wrapper">
+                    <div class="container">
+                        <h1 class="title">Sudoku Solver</h1>
+                        <p class="text-muted" style="font-size: larger;">
+                            Su Doku (Japanese meaning number place) is the name given to a popular puzzle concept. Its origin is unclear, but credit must be attributed to Leonhard Euler who invented a similar, and much more difficult, puzzle idea called Latin Squares. The objective of Su Doku puzzles, however, is to replace the blanks (or zeros) in a 9 by 9 grid in such that each row, column, and 3 by 3 box contains each of the digits 1 to 9.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="row" style="justify-content: center;">
+                <div class="col-md-8">
+                    <div class="row text-center">
+                        <div class="col-sm">
+                            <div class="container">
+                                <h3>Raw Puzzles</h3>    
+                            </div>
+                        </div>
+                        <div class="col-sm">
+                            <div class="container">
+                                <h3>Solved Puzzles</h3>    
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row sudoku-boards">
+                        <div class="col-sm">
+                            <% for(var i = 0; i < unsolvedBoards.length; i++) { %>
+                                <div class="row">
+                                    <div class="col-sm text-center p-3 m-3 raw-puzzles">
+                                        <% for(var j = 0; j < unsolvedBoards[i].length; j++) { %>
+                                            <% for (var k = 0; k < unsolvedBoards[i][j].length; k++) { %>
+                                                <span class="px-2"><%= unsolvedBoards[i][j][k] %></span>
+                                                <% if (k === 2 || k === 5) { %>
+                                                    <span>|</span>
+                                                <% } %>
+                                                <% if (k === 8) { %>
+                                                    <br/>
+                                                <% } %>
+                                            <% } %>
+                                            <% if (j === 8) { %>
+                                                <br/>
+                                            <% } %>
+                                        <% } %>
+                                    </div>
+                                </div>
+                            <% } %>
+                        </div>
+                        <div class="col-sm">
+                            <% for(var i = 0; i < solvedBoards.length; i++) { %>
+                                <div class="row">
+                                    <div class="col-sm text-center p-3 m-3 raw-puzzles">
+                                        <% for(var j = 0; j < solvedBoards[i].length; j++) { %>
+                                            <% for (var k = 0; k < solvedBoards[i][j].length; k++) { %>
+                                                <span class="px-2"><%= solvedBoards[i][j][k] %></span>
+                                                <% if (k === 2 || k === 5) { %>
+                                                    <span>|</span>
+                                                <% } %>
+                                                <% if (k === 8) { %>
+                                                    <br/>
+                                                <% } %>
+                                            <% } %>
+                                            <% if (j === 8) { %>
+                                                <br/>
+                                            <% } %>
+                                        <% } %>
+                                    </div>
+                                </div>
+                            <% } %>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
