@@ -87,6 +87,7 @@
                                                 <br/>
                                             <% } %>
                                         <% } %>
+                                        <br>
                                     </div>
                                 </div>
                             <% } %>
@@ -98,8 +99,10 @@
                                         <span style="font-size: 200pt;" class="m-auto"><%= (i+1) %></span>
                                     </div>
                                     <div class="col-sm text-center p-3 m-3 raw-puzzles">
+                                        <% var tmp = solvedBoards[i][0][0] %>
                                         <% for(var j = 0; j < solvedBoards[i].length; j++) { %>
                                             <% for (var k = 0; k < solvedBoards[i][j].length; k++) { %>
+                                                <% if(j == 0 && k > 0 && k < 3) tmp = solvedBoards[i][j][k] + tmp %></3>
                                                 <% if( solvedBoards[i][j][k] !== 0) { %>
                                                     <span class="px-2 m-2" style="background-color: #cbe5f3c2; color: #3b4347;">
                                                         <b><%= solvedBoards[i][j][k] %></b>
@@ -121,6 +124,7 @@
                                                 <br/>
                                             <% } %>
                                         <% } %>
+                                        <span>Sum of <%= solvedBoards[i][0][0] %> + <%= solvedBoards[i][0][1] %> + <%= solvedBoards[i][0][2] %> = </span><%= tmp %>
                                     </div>
                                 </div>
                             <% } %>
