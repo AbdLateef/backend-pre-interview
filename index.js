@@ -18,7 +18,7 @@ var boardToSendSolved = []
 for (var i = 0; i < arrAllSudoku.length; i += size) {
     arrayOfArrays.push(arrAllSudoku.slice(i,i+size))
 }
-//console.log(arrayOfArrays)
+
 for (var i = 0; i < arrayOfArrays.length; i++) {
     var sudoku = new sudokuClass(arrayOfArrays[i].join(''))
     boardToSend.push(sudoku.board)
@@ -41,11 +41,5 @@ app.get('/', function(req, res) {
     res.render('index', {unsolvedBoards: boardToSend, solvedBoards: boardToSendSolved})
 })
 app.listen(3000, () => {
-    console.log('Server started on localhost:3000')
+    console.log('Server started on http://localhost:3000')
 })
-
-// app.get('/',function(req,res) {
-//     res.end(
-//         ejs.render()
-//     )
-// })
